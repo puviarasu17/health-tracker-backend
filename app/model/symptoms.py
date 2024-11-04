@@ -24,5 +24,22 @@ class SearchResponse(BaseModel):
     input_symptom: str
     matched_symptom: Optional[str]
     severity: Optional[str]
+    id: Optional[str] = None
     score: Optional[float]
+    error: Optional[str] = None
+
+
+class BatchedSymptomRequest(BaseModel):
+    symptoms: List[str]
+    batch_size: int = Field(default=5, ge=1, le=20, description="Number of symptoms to process in each batch")
+
+
+class MedicalNotesRequest(BaseModel):
+    notes: str
+
+
+class MultiSymptomResponse(BaseModel):
+    results: List[SearchResponse]
+    total_time: float
+    processed_count: int
     error: Optional[str] = None

@@ -1,0 +1,133 @@
+{
+  "symptoms": [
+    {
+      "symptom": "mild headache",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate headache",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe headache",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical headache",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild fatigue",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate fatigue",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe fatigue",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical fatigue",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild nausea",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate nausea",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe nausea",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical nausea",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild fever",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate fever",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe fever",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical fever",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild cough",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate cough",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe cough",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical cough",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild abdominal pain",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate abdominal pain",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe abdominal pain",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical abdominal pain",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild vomit",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate vomit",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe vomit",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical vomit",
+      "severity": "critical"
+    },
+    {
+      "symptom": "mild muscle pain",
+      "severity": "mild"
+    },
+    {
+      "symptom": "moderate muscle pain",
+      "severity": "moderate"
+    },
+    {
+      "symptom": "severe muscle pain",
+      "severity": "severe"
+    },
+    {
+      "symptom": "critical muscle pain",
+      "severity": "critical"
+    }
+  ],
+  "batch_size": 100
+}

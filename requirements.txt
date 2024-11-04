@@ -1,8 +1,8 @@
-fastapi
-uvicorn
-pydantic
-pydantic-settings
-pymongo
+fastapi==0.115.4
+uvicorn==0.32.0
+pydantic==2.9.2
+pydantic-settings==2.6.1
+pymongo==4.10.1
 langchain==0.2.15
 langchain-core==0.2.37
 langchain-openai==0.1.23

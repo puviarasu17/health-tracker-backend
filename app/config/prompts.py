@@ -12,7 +12,13 @@ Your are provided with the task to extract the symptoms from the medical notes t
         Correct core symptom: cough, fever
 2. **Identify the severity**
     - With your Health care experience, give a severity to each symptom
-    - Severity should be between 1 and 3 with 1 being mild symptom and 3 being extreme symptom
+    - Severity should be one of the below 4 
+        1. mild
+        2. moderate
+        3. severe
+        4. critical
+    - Always prefix the core_symptom with one of the above 4 severity levels. Example: severe fever, mild cough
+    - Strictly add only one of these 4 prefixes. Do not add any synonyms
 3. **Prioritize the symptoms**
     - With your Health care experience, give a priority to each symptom
     - Priority should be between 1 and 3 with 1 being high priority and 3 being low priority
@@ -20,35 +26,30 @@ Your are provided with the task to extract the symptoms from the medical notes t
    {{
         "symptoms" : [
             {{
-                "core_symptom": "fever", 
-                "severity": "2",
+                "symptom": "severe fever",
                 "priority": "2"
             }},
             {{
-                "core_symptom": "cough", 
-                "severity": "3",
+                "symptom": "mild cough",
                 "priority": "3"
             }}
         ]
    }}
    
 Example: 
-Input: Patient having high fever for past 3 days, experiencing mild cough for past 2 days along with severe head ache for past 4 days
+Input: Patient having high fever for past 3 days, experiencing light cough for past 2 days along with severe head ache for past 4 days
 Output: {{
         "symptoms" : [
             {{
-                "core_symptom": "fever", 
-                "severity": "2",
+                "symptom": "severe fever",
                 "priority": "1"
             }},
             {{
-                "core_symptom": "cough", 
-                "severity": "1",
+                "symptom": "mild cough",
                 "priority": "3"
             }},
             {{
-                "core_symptom": "headache", 
-                "severity": "3",
+                "symptom": "severe headache", 
                 "priority": "2"
             }}
         ]

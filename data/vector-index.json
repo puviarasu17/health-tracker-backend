@@ -1,0 +1,10 @@
+{
+  "fields": [
+    {
+      "type": "vector",
+      "path": "symptomVector",
+      "numDimensions": 1536,
+      "similarity": "cosine"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException
-from app.model.symptoms import VectorizeResponse, SymptomBatch, SearchResponse
+from app.model.symptoms import VectorizeResponse, SymptomBatch, MultiSymptomResponse, MedicalNotesRequest
 from datetime import datetime
-from app.service.symptoms_service import process_symptom_batch, search_symptom
+from app.service.symptoms_service import process_symptom_batch, convert_medical_notes_to_symptoms
+
 
 router = APIRouter(
     prefix="/api",
@@ -41,9 +42,12 @@ async def vectorize_symptoms(request: SymptomBatch):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.get("/search_symptom/{symptom}", response_model=SearchResponse)
-async def search_symptom_endpoint(symptom: str):
+@router.post("/convert_notes_to_symptoms", response_model=MultiSymptomResponse)
+async def convert_notes_to_symptoms(medical_notes: MedicalNotesRequest):
     """
-    API endpoint to search for a single symptom
+    API endpoint to convert medical notes to symptoms
     """
-    return await search_symptom(symptom)
+    try:
+        return await convert_medical_notes_to_symptoms(medical_notes)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
