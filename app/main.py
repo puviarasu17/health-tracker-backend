@@ -2,8 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError, HTTPException
 from fastapi.responses import JSONResponse
-
-from app.api.routes.symptoms_route import router
+from app.api.routes.diseases_route import diseases_router
+from app.api.routes.symptoms_route import symptoms_router
 
 
 def create_app():
@@ -13,7 +13,8 @@ def create_app():
         version="1.0.0",
     )
 
-    app.include_router(router)
+    app.include_router(symptoms_router)
+    app.include_router(diseases_router)
 
     app.add_exception_handler(RequestValidationError, lambda request, exc: JSONResponse(
         status_code=400,

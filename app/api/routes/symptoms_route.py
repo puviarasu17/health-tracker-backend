@@ -4,13 +4,14 @@ from datetime import datetime
 from app.service.symptoms_service import process_symptom_batch, convert_medical_notes_to_symptoms
 
 
-router = APIRouter(
-    prefix="/api",
-    tags=["ISO 20022 Message Generator"],
+symptoms_router = APIRouter(
+    prefix="/api/symptoms",
+    tags=["Symptoms"],
 )
 
 
-@router.post("/vectorize", response_model=VectorizeResponse)
+
+@symptoms_router.post("/symptoms/vectorize", response_model=VectorizeResponse)
 async def vectorize_symptoms(request: SymptomBatch):
     """
     Vectorize multiple symptoms and store in MongoDB
@@ -42,7 +43,7 @@ async def vectorize_symptoms(request: SymptomBatch):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.post("/convert_notes_to_symptoms", response_model=MultiSymptomResponse)
+@symptoms_router.post("/symptoms/convert_notes_to_symptoms", response_model=MultiSymptomResponse)
 async def convert_notes_to_symptoms(medical_notes: MedicalNotesRequest):
     """
     API endpoint to convert medical notes to symptoms

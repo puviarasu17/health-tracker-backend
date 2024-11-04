@@ -31,7 +31,7 @@ async def process_symptom_batch(symptoms: List[Symptom]) -> tuple:
                 "vectorized_at": datetime.utcnow()
             }
 
-            db_manager.collection.update_one(
+            db_manager.symptoms_collection.update_one(
                 {"symptom": symptom.symptom},
                 {"$set": document},
                 upsert=True
@@ -57,7 +57,7 @@ async def search_symptom(symptom: str) -> SearchResponse:
         symptom_vector = await get_embedding(symptom)
 
         # Perform vector search
-        result = db_manager.collection.aggregate([
+        result = db_manager.symptoms_collection.aggregate([
             {
                 "$vectorSearch": {
                     "index": "default",

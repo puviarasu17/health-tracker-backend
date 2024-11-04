@@ -6,7 +6,8 @@ class DatabaseManager:
     def __init__(self):
         self.client = MongoClient(MONGODB_URI)
         self.db = self.client[MONGODB_DB_NAME]
-        self.collection = self.db[MONGODB_COLLECTION_NAME]
+        self.symptoms_collection = self.db[MONGODB_COLLECTION_NAME]
+        self.diseases_collection = self.db["diseases"]
 
     def close(self):
         self.client.close()
